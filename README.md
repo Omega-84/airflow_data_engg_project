@@ -72,14 +72,19 @@ where `bucket_name` is the derired bucket name and `region_name` is the region w
 
 `aws s3 cp etl_script.py s3://{bucket_name}/etl_script.py`<br>
 `aws s3 cp airflow_dag.py s3://{bucket_name}/airflow_dag.py`<br>
-`aws s3 cp requirements.txts3://{bucket_name}/requirements.txt`<br>
+`aws s3 cp requirements.txt s3://{bucket_name}/requirements.txt`<br>
 
 Make sure you are in the same directory as the files otherwise specify the relative paths.
 
-9. Connect to the EC2 instance using the `.pem` file saved earlier using SSH client. The command can be found on the EC2 console in the instances tab , click on the desired instance the on the Connect button.
+9. Connect to the EC2 instance using the `.pem` file saved earlier using SSH client. The command can be found on the EC2 console in the instances tab , click on the desired instance then on the Connect button.
 Once successfully connected, run the following commands <br>
 `sudo apt-get update`<br>
 `sudo apt-get install python3-pip`<br>
 `sudo pip install awscli`<br>
 
 Configure the AWS user as done in step 5.
+
+10. Copy the `requirements.txt` file from S3 to the instance using the command
+`aws s3 cp s3://{bucket_name}/requirements.txt ./`<br>
+and the run  
+`sudo pip install requirements.txt`
