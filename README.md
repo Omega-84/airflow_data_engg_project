@@ -61,9 +61,9 @@ NOTE - The free tier instance **t2.micro** has just 1 GB of memory which is insu
 * Select default values for remaining arguments and click on launch instance.
 * Wait for a couple of minutes for the instance to be launched successfully and then edit the inbound rules from the security tab of the instance to allow inbound traffic from your IP address. [Tutorials](https://www.youtube.com/results?search_query=edit+the+inbound+rules+ec2)
 
-7. Now head on to the S3 web page and click on create bucket. Simply provide a unique name to the bucket and click on create bucket.
+7. Now head on to the S3 web page and click on create bucket. Simply provide a unique name to the bucket and click on create bucket.<br>
 There is an alternative way to create the bucket via the command line in your local development directory.
 
-Pull up the command line and enter the following command
-`aws s3api create-bucket --bucket  {bucket_name} --region {region_name} --create-bucket-configuration LocationConstraint={region_name}`
+Pull up the command line and enter the following command<br>
+`aws s3api create-bucket --bucket  {bucket_name} --region {region_name} --create-bucket-configuration LocationConstraint={region_name}`<br>
 where `bucket_name` is the derired bucket name and `region_name` is the region where the account is present. You can find out your region name in the top right corner of the AWS console.
