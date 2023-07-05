@@ -29,6 +29,8 @@ AWS was used as cloud host to deploy and run the scripts.
 <br>
 
 ## How to recreate this project??
+This project requires some money(INR 50-100) to be completed successfully as it uses AWS paid services not part of the free tier. If you wish to proceed kindly do so on your own discretion. You have been alerted.
+
 
 1. First of all clone this repository onto your local machine. Run the following command on the command line <br>
 `git clone https://github.com/Omega-84/airflow_data_engg_project.git`
@@ -40,12 +42,19 @@ AWS was used as cloud host to deploy and run the scripts.
 
 4. Create an IAM user and attach the full access policies for S3 and EC2 services.
 It is advisable not to use root or primary account for any development. 
-Once created, save the access credentials for the user as it is necessary to access the account later on. [Tutorials](https://www.youtube.com/results?search_query=create+iam+user+and+attach+policy+)
+Once created, save the access credentials for the user as it is necessary to access the account later on. [Tutorial](https://www.youtube.com/results?search_query=create+iam+user+and+attach+policy+)
 
 5. In the local development environment, install the *awscli* library to configure the IAM user to perform operations in the local environment.<br>
 `pip install awscli`<br>
-Then run the command <br>
+The run the command <br>
 `aws configure` <br>
 When prompted, enter the saved Access Key ID and press enter, now enter the Secret Access Key and press enter, the remaining two inputs are beyond the scope of this project and can be skipped by pressing enter twice. 
 Now we can perform some operations on our AWS account from the command line itself.
 
+6. Login in to the AWS management console for the IAM user created. Head on over to the EC2 service web page and click on launch an instance. Follow the following steps
+* Provide any desirable name
+* Select the **Ubuntu** machine image
+* Select the **t2.medium** instance type. 
+##NOTE - The free tier instance **t2.micro** has just 1 GB of memory which is insufficient to run Airflow, we require a minimum of 4 GB to launch Airflow so we selected the cheapest option available i.e. **t2.medium**
+* Create a key pair and save it as a `.pem` file in your local project directory
+* Select default values for remaining arguments and click on launch instance.
