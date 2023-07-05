@@ -26,3 +26,6 @@ AWS was used as cloud host to deploy and run the scripts.
 - Amazon S3 - Simple object store in the AWS cloud <br>
 <br>
 <br>
+<br>
+
+## How to recreate this project??
