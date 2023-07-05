@@ -40,7 +40,7 @@ AWS was used as cloud host to deploy and run the scripts.
 
 4. Create an IAM user and attach the full access policies for S3 and EC2 services.
 It is advisable not to use root or primary account for any development. 
-Once created, save the access credentials for the user as it is necessary to access the account later on. [Tutorial](https://www.youtube.com/results?search_query=create+iam+user+and+attach+policy+)
+Once created, save the access credentials for the user as it is necessary to access the account later on. [Tutorials](https://www.youtube.com/results?search_query=create+iam+user+and+attach+policy+)
 
 5. In the local development environment, install the *awscli* library to configure the IAM user to perform operations in the local environment.<br>
 `pip install awscli`<br>
