@@ -26,6 +26,8 @@ AWS was used as cloud host to deploy and run the scripts.
 - Amazon S3 - Simple object store in the AWS cloud <br>
 <br>
 <br>
-<br>
 
 ## How to recreate this project??
+
+1. First of all clone this repository onto your local machine. Run the following command on the command line 
+`git clone https://github.com/Omega-84/airflow_data_engg_project.git`
