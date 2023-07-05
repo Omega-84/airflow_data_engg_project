@@ -55,6 +55,7 @@ Now we can perform some operations on our AWS account from the command line itse
 * Provide any desirable name
 * Select the **Ubuntu** machine image
 * Select the **t2.medium** instance type. 
-##NOTE - The free tier instance **t2.micro** has just 1 GB of memory which is insufficient to run Airflow, we require a minimum of 4 GB to launch Airflow so we selected the cheapest option available i.e. **t2.medium**
+
+NOTE - The free tier instance **t2.micro** has just 1 GB of memory which is insufficient to run Airflow, we require a minimum of 4 GB to launch Airflow so we selected the cheapest option available i.e. **t2.medium**
 * Create a key pair and save it as a `.pem` file in your local project directory
 * Select default values for remaining arguments and click on launch instance.
