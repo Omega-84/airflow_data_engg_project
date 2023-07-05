@@ -84,7 +84,19 @@ Once successfully connected, run the following commands <br>
 
 Configure the AWS user as done in step 5.
 
-10. Copy the `requirements.txt` file from S3 to the instance using the command
+10. Copy the `requirements.txt` file from S3 to the instance using the command<br>
 `aws s3 cp s3://{bucket_name}/requirements.txt ./`<br>
 and the run  
 `sudo pip install requirements.txt`
+
+11. Run the `airflow` command to instantiate Airflow. Run the following commands to copy the scripts and create a DAG to run the script.<br>
+`cd home/ubuntu/airflow/dags`<br>
+`aws s3 cp s3://{bucket_name}/etl_script.py ./`<br>
+`aws s3 cp s3://{bucket_name}/airflow_dag.py ./`<br>
+`airflow db init`<br>
+`airflow standalone`<br>
+A login credential for Airflow webserver must have been generated after running the last command. Save them for the next step.
+
+12. Now head on over to the EC2 console and click on the instance's networking tab and copy the `IPv4` address for the instance and paste it on a new tab and add the following at the end `:8080`. Login with the previously saved access credentials. 
+Once you login successfully, click on the DAGs tab towards the left hand upper corner, you will see your DAG on the first place in the list of available DAGs. Click on it and then click on the run button on the right side to run the DAG. 
+Monitor the status of the DAG and once it runs successfully, you will see a file `df.csv` stored in the S3 bucket.
