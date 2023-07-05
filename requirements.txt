@@ -4,4 +4,3 @@ boto3==1.26.165
 pandas==2.0.3
 Requests==2.31.0
 lxml==4.9.3
-awscli==1.28.0
