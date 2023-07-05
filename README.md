@@ -67,3 +67,19 @@ There is an alternative way to create the bucket via the command line in your lo
 Pull up the command line and enter the following command<br>
 `aws s3api create-bucket --bucket  {bucket_name} --region {region_name} --create-bucket-configuration LocationConstraint={region_name}`<br>
 where `bucket_name` is the derired bucket name and `region_name` is the region where the account is present. You can find out your region name in the top right corner of the AWS console.
+
+8. We need to upload both the scripts on the S3 bucket. You can either do it by the console or through the terminal via the following commands
+
+`aws s3 cp etl_script.py s3://{bucket_name}/etl_script.py`<br>
+`aws s3 cp airflow_dag.py s3://{bucket_name}/airflow_dag.py`<br>
+`aws s3 cp requirements.txts3://{bucket_name}/requirements.txt`<br>
+
+Make sure you are in the same directory as the files otherwise specify the relative paths.
+
+9. Connect to the EC2 instance using the `.pem` file saved earlier using SSH client. The command can be found on the EC2 console in the instances tab , click on the desired instance the on the Connect button.
+Once successfully connected, run the following commands <br>
+`sudo apt-get update`<br>
+`sudo apt-get install python3-pip`<br>
+`sudo pip install awscli`<br>
+
+Configure the AWS user as done in step 5.
