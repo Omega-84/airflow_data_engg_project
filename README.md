@@ -44,7 +44,7 @@ Once created, save the access credentials for the user as it is necessary to acc
 
 5. In the local development environment, install the *awscli* library to configure the IAM user to perform operations in the local environment.<br>
 `pip install awscli`<br>
-The run the command <br>
+Then run the command <br>
 `aws configure` <br>
 
 When prompted, enter the saved Access Key ID and press enter, now enter the Secret Access Key and press enter, the remaining two inputs are beyond the scope of this project and can be skipped by pressing enter twice. 
